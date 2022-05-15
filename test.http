@@ -1,0 +1,29 @@
+@host = https://flask.osaka.milliax.me
+#@host = https://linebot.osaka.milliax.me
+
+###
+GET {{host}}
+
+###
+POST {{host}}/callback
+Content-Type: application/json
+
+{
+    "time": "1647357215300",
+    "methods": ["country","energy","manufacturer"]
+}
+
+###
+GET http://localhost:3000/picture/62F766.png
+
+###
+GET http://localhost:3000/shutdown
+
+###
+POST https://linebot.osaka.milliax.me/broadcast
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "message": "test"
+}
